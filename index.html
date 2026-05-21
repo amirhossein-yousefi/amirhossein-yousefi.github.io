@@ -225,28 +225,46 @@
                         </h3>
                         <ul>
                             <li>
-                                <b>Instruction-Tuned LLM for Text Classification</b> - LoRA/QLoRA fine-tuning with ~94% accuracy
+                                <b><a href="https://github.com/amirhossein-yousefi/text-jepa-experiments">Text-JEPA Experiments &amp; AF-JEPA</a></b> - JEPA target-design studies on WikiText-2 and FineWeb-Edu (PyTorch, MiniLM, Qwen 2.5-7B); raw-target top-1 retrieval 0.242 vs. semantic cards 0.183
                             </li>
                             <li>
-                                <b>Multi-Modal Hateful Content Classification</b> - CLIP/SigLIP fusion with multi-task learning (macro-F1: 0.569, ROC-AUC: 0.783)
+                                <b><a href="https://github.com/amirhossein-yousefi/swahili-biomed-adapters">Multilingual LLM Adaptation (Swahili Biomedical)</a></b> - MAD-X-style stacked adapters on a frozen AfroXLMR-large backbone; evaluated on MMLU-ProX-Swahili clinical and MasakhaNER
                             </li>
                             <li>
-                                <b>VLM Fine-Tuning via JSON Generation</b> - Qwen2-VL / PaliGemma2 for multi-label detection
+                                <b><a href="https://github.com/amirhossein-yousefi/LLM-Instruction-Tuning-Text-Classification">Instruction-Tuned LLM for Text Classification</a></b> - LoRA/QLoRA fine-tuning (TRL + PEFT) with ~94% accuracy
                             </li>
                             <li>
-                                <b>Multi-Label Emotion Classification</b> - RoBERTa-based (27 emotions, ROC-AUC: 0.952)
+                                <b><a href="https://github.com/amirhossein-yousefi/multimodal-content-moderation">Multi-Modal Hateful Content Classification</a></b> - CLIP/SigLIP late-fusion + multi-task learning on MMHS150K (macro-F1 0.569, ROC-AUC 0.783)
                             </li>
                             <li>
-                                <b>Whisper-based Multi-Task ASR + Voice Intensity</b> - WER 4.7%, intensity RMSE 0.73
+                                <b><a href="https://github.com/amirhossein-yousefi/text_image_multi_modal_vlm">VLM Fine-Tuning via JSON Generation</a></b> - Qwen2-VL / PaliGemma2 / SmolVLM for multi-label detection (Qwen2-VL+LoRA, micro-F1 0.611)
                             </li>
                             <li>
-                                <b>Image-Text Retrieval (CLIP/SigLIP)</b> - Flickr30k R@1 92.3% (Img→Text)
+                                <b><a href="https://github.com/amirhossein-yousefi/multi-label-emotion-classification-reddit-comments">Multi-Label Emotion Classification</a></b> - RoBERTa-based (27 emotions, micro-F1 0.528, ROC-AUC 0.952)
                             </li>
                             <li>
-                                <b>Keyword Spotting (KWS)</b> - Real-time streaming inference on Speech Commands v2
+                                <b><a href="https://github.com/amirhossein-yousefi/speech2text-intensity-regression">Whisper Multi-Task ASR + Voice Intensity</a></b> - Joint ASR + loudness regression (WER 4.70%, intensity RMSE 0.73); Gradio + SageMaker
                             </li>
                             <li>
-                                <b>Emotion-Aware TTS Style Transfer</b> - Style-controllable synthesis with Gradio UI
+                                <b><a href="https://github.com/amirhossein-yousefi/speech2text-intensity-regression-wav2vec">Wav2Vec2 Multi-Task: CTC ASR + Intensity</a></b> - Wav2Vec2-base CTC + intensity head with attention-masked mean pooling (val WER ≈12.9%)
+                            </li>
+                            <li>
+                                <b><a href="https://github.com/amirhossein-yousefi/ASR">CTC ASR Baseline (Speech-to-Text)</a></b> - End-to-end Wav2Vec2 pipeline on Common Voice 17.0; ONNX export, CLI inference, SageMaker autoscaling/HPO
+                            </li>
+                            <li>
+                                <b><a href="https://github.com/amirhossein-yousefi/Image-Contrastive-CLIP">Image-Text Retrieval (CLIP/SigLIP)</a></b> - Flickr30k R@1 92.3% (Img→Text) / 79.0% (Text→Img); FAISS-ready embeddings
+                            </li>
+                            <li>
+                                <b><a href="https://github.com/amirhossein-yousefi/keyword-spotting">Keyword Spotting (Wav2Vec2, ONNX, SageMaker)</a></b> - Real-time streaming inference on Speech Commands v2; realtime / serverless / batch helpers
+                            </li>
+                            <li>
+                                <b><a href="https://github.com/amirhossein-yousefi/Emotion-Aware-TTS-Style-Transfer">Emotion-Aware TTS Style Transfer</a></b> - SpeechT5 + WavLM + ECAPA + HiFi-GAN; StyleAdaptor/StyleSpeakerFusion with Gradio UI
+                            </li>
+                            <li>
+                                <b><a href="https://github.com/amirhossein-yousefi/speech-conversion">Any-to-Any Speech Conversion</a></b> - SpeechT5-VC + ECAPA + HiFi-GAN voice conversion from a short reference clip; CMU ARCTIC fine-tuning
+                            </li>
+                            <li>
+                                <b>Forward-Forward Layer Free-Riding Analysis</b> - Companion code for <a href="https://arxiv.org/abs/2605.06240">arXiv:2605.06240</a>; per-block, hardness-gated, and depth-scaled remedies on CIFAR-10/100 and Tiny ImageNet
                             </li>
                         </ul>
                         <p>
