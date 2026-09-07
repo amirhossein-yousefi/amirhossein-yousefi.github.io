@@ -343,14 +343,10 @@
           <p class="job-role">Senior Machine Learning Engineer</p>
           <p class="job-place meta">Barcelona, Spain</p>
           <ul class="job-list" role="list">
-            <li>Own the production ML system behind clinical-trial site tiering end to end &mdash; a family of ranking models (site participation, performance and delivery) plus the data pipeline that feeds them &mdash; used by clinical-trial teams to select investigator sites for studies.</li>
-            <li>Build and operate the automated model-evaluation framework: it discovers candidate models in MLflow, runs bulk predictions, and ranks each candidate against the current production model on versioned datasets and ranking metrics, making promote-or-hold an evidence-backed decision instead of a judgement call.</li>
-            <li>Guard the measurement itself: drift and feature-space-collapse detection against production, plausibility ceilings on candidate predictions, and de-duplication of identical retrains, so no model is promoted on a broken comparison.</li>
-            <li>Make model quality a live surface: Datadog dashboards defined as code &mdash; versioned in the repo and provisioned through Terraform, never hand-edited &mdash; fed by metric-push steps inside the evaluation pipeline, with alerting on regression, drift, and evaluation runs that report nothing at all.</li>
-            <li>Moved nightly data ingestion onto orchestrated Airflow DAGs with a real dependency graph, retries, data-quality gates and end-to-end failure alerting, replacing fragile cron-offset scheduling and cutting the nightly window from <span class="fig">~9 h</span> to <span class="fig">~5 h</span>.</li>
-            <li>Also operate a protocol-similarity retrieval service that surfaces the most similar prior trials, and drive documentation, dependency and vulnerability hygiene, and mentoring across the stack.</li>
-            <li>Model work is data-centric: improving the data a two-tower ranking network consumes rather than swapping architectures, with every change validated through the evaluation framework.</li>
-          </ul>
+            <li>Own the ranking models and the data pipeline behind clinical-trial site tiering end to end &mdash; the system trial teams use to choose investigator sites for studies. The model work is data-centric: improve what the two-tower ranker is fed, not the architecture.</li>
+            <li>Build and operate the evaluation framework that decides whether a candidate model replaces the one in production, ranking each against the incumbent on versioned datasets. Guard the measurement itself, not only the model: drift and feature-space-collapse detection, plausibility ceilings on predictions, de-duplication of identical retrains. An evaluation run that reports nothing alerts like a failed one.</li>
+            <li>Moved nightly ingestion off cron-offset scheduling onto orchestrated Airflow DAGs with real dependencies, retries, data-quality gates and end-to-end failure alerting. The nightly window fell from <span class="fig">~9 h</span> to <span class="fig">~5 h</span>.</li>
+</ul>
         </div>
       </li>
 
@@ -361,12 +357,10 @@
           <p class="job-role">Senior Data Scientist, Applied Science</p>
           <p class="job-place meta">Barcelona, Spain</p>
           <ul class="job-list" role="list">
-            <li>Designed and shipped the core ML classifier behind the <a href="https://clarivate.com/intellectual-property/lp/derwent-ai-classifier/" rel="noopener">Derwent AI Classifier</a>.</li>
-            <li>Pretrained domain-specific masked language models from scratch on a curated 60M+ patent corpus (ModernBERT architecture, custom tokenizer, FlashAttention / RoPE / GLU).</li>
-            <li>Designed and productionized a multi-agent patent novelty and prior-art research system on AWS AgentCore, with guardrails against prompt injection and data leakage.</li>
-            <li>Built a DeepEval-based evaluation framework with custom retrieval and relevance metrics, agent-trace replay, and a per-release regression suite.</li>
-            <li>Promoted within less than a year for exceptional performance.</li>
-          </ul>
+            <li>Designed and shipped the ML core of the <a href="https://clarivate.com/intellectual-property/lp/derwent-ai-classifier/" rel="noopener">Derwent AI Classifier</a>, which mapped a customer's patents onto their own taxonomy: hierarchical classifiers trained on demand where labels existed, LLM labeling where they did not. <span class="fig">$10M+</span> in incremental revenue and a <span class="fig">30%</span> lift in renewal contracts; two published USPTO applications cover the work.</li>
+            <li>Replaced a manual examiner workflow with a multi-agent prior-art and novelty research system on AWS, with guardrails against prompt injection and data leakage, and built the per-release evaluation suite that made its improvements measurable and customer-reportable. Sole inventor on the patent filing that covers it.</li>
+            <li>Pretrained patent-domain masked language models from scratch on a curated <span class="fig">60M+</span> patent corpus with a custom tokenizer. The resulting model beat general ModernBERT on three of four internal benchmarks at over three times PatentBERT's inference throughput.</li>
+</ul>
         </div>
       </li>
 
@@ -390,7 +384,6 @@
           <p class="job-place meta">Spain</p>
           <ul class="job-list" role="list">
             <li>Semantic search improvements (<span class="fig">MRR@15 +8%</span>) and multimodal price-estimation and recommender systems (<span class="fig">MAE &minus;12%</span>).</li>
-            <li>Mentored 20+ students.</li>
           </ul>
         </div>
       </li>
@@ -415,7 +408,6 @@
           <p class="job-place meta">Tehran, Iran</p>
           <ul class="job-list" role="list">
             <li>Semantic app search (<span class="fig">Recall@20 +9%</span>); POI extraction with YOLO / OCR / SATRN (<span class="fig">F1 53% &rarr; 65%</span>, half the inference time); multi-GPU segmentation training (<span class="fig">+11% mIoU</span>).</li>
-            <li>Twice promoted within one year.</li>
           </ul>
         </div>
       </li>
