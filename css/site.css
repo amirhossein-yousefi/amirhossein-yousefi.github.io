@@ -294,10 +294,11 @@ a:hover, a:focus-visible {
 
 /* The skip link moves focus to <main>; don't ring it for that programmatic hop. */
 main[tabindex]:focus { outline: none; }
-[id] { scroll-margin-top: calc(var(--strap) + 1.25rem); }
-/* scroll-margin only covers elements that have an id; this covers the ~50
-   focusable links that do not, on sequential-focus scrolling. */
-html { scroll-padding-top: calc(var(--strap) + 1rem); }
+/* One offset, on the scrollport. scroll-padding-top covers BOTH anchor
+   navigation and sequential-focus scrolling, including the ~50 focusable
+   links that carry no id. A scroll-margin-top on [id] as well would stack
+   with this and drop every anchor 88px below the strap instead of 20px. */
+html { scroll-padding-top: calc(var(--strap) + 1.25rem); }
 
 /* THE DOUBLE RULE - opens the masthead, closes the colophon. Twice, ever. */
 .rule-double {

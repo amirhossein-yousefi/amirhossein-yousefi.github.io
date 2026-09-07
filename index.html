@@ -838,6 +838,20 @@
     navLinks[a.getAttribute('href').slice(1)] = a;
   });
 
+  var nav = document.querySelector('.strap-nav');
+  function centreInNav(link) {
+    if (!nav || nav.scrollWidth <= nav.clientWidth) { return; }
+    /* Measure from rects, not offsetLeft: .strap is position:sticky, so it is
+       the offsetParent and offsetLeft would be relative to the strap rather
+       than to the nav's scrolling content. */
+    var navRect = nav.getBoundingClientRect();
+    var linkRect = link.getBoundingClientRect();
+    var linkLeft = (linkRect.left - navRect.left) + nav.scrollLeft;
+    var target = linkLeft - (nav.clientWidth - linkRect.width) / 2;
+    target = Math.max(0, Math.min(target, nav.scrollWidth - nav.clientWidth));
+    if (Math.abs(nav.scrollLeft - target) > 1) { nav.scrollLeft = target; }
+  }
+
   var railObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       var id = entry.target.id;
@@ -848,10 +862,13 @@
           var isCurrent = (key === id);
           navLinks[key].classList.toggle('is-current', isCurrent);
           /* On narrow viewports the nav is a horizontal scroller that always
-             starts at 0, so the highlight would sit off-screen. Bring it in. */
-          if (isCurrent && navLinks[key].scrollIntoView) {
-            navLinks[key].scrollIntoView({ block: 'nearest', inline: 'nearest' });
-          }
+             starts at 0, so the highlight would sit off-screen. Centre it by
+             setting the nav's OWN scrollLeft.
+             Do not use scrollIntoView here: it starts a scroll on the nearest
+             scrolling box AND the viewport, which cancels the smooth scroll an
+             anchor click is in the middle of. Every nav link then stopped a few
+             hundred pixels down the page instead of reaching its section. */
+          if (isCurrent) { centreInNav(navLinks[key]); }
         }
       }
     });
