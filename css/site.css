@@ -1067,22 +1067,17 @@ a.furniture:hover, a.furniture:focus-visible { color: var(--ink); border-bottom-
 
 /* The rule belongs to the sheet, not the viewport: on .colophon it ran the
    full window width while every section rule stopped at the 76rem sheet. */
-.colophon { padding-block: 0 4.5rem; }
+/* The trailing space is load-bearing, not decoration: the document has to stay
+   tall enough for the LAST section to scroll up to scroll-padding-top. When the
+   colophon note was removed the page lost ~62px and #education could no longer
+   reach its anchor offset on a short viewport. */
+.colophon { padding-block: 0 8.5rem; }
 .colophon > .sheet { border-top: 1px solid var(--rule); padding-top: 3.5rem; }
 .colophon .links { margin-top: 0; }
-.colophon-note {
-  margin-top: 2rem;
-  max-width: var(--measure-prose);
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: var(--muted);
-}
 .terminal {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   color: var(--rule-strong);
 }
 
