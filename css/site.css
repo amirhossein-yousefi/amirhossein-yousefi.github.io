@@ -12,13 +12,13 @@
 
      1.  Section rail: the accent tick and the mono folio numeral (No 01 - No 08).
      2.  Reference/patent hanging numerals [1]-[6], [P1]-[P3], and the 2px
-         marginal stripe on the two sole-author preprints.
+         marginal stripe on the two sole-author papers.
      3.  Identifier stamps: arXiv IDs / application numbers (text on --accent-wash).
      4.  Link underline colour at rest and its inked-in hover/focus state; the
          1px indicator that furniture and nav links grow on hover.
      5.  The focus-visible ring (--focus is an alias of --accent).
      6.  The current-role spine segment, its 7px filled square, and the
-         PRESENT / PUBLISHED status tags.
+         PRESENT / PUBLISHED / NEURIPS 2026 (accepted-venue) status tags.
      7.  The About drop cap.
      8.  The rosette (hero engraving + the 12px fleurons) and ::selection.
      9.  Index numerals and the arrow glyph on a HOVERED project row only.
